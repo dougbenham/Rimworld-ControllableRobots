@@ -55,7 +55,7 @@ namespace ControllableRobots
         [HarmonyPrefix]
         public static bool Hook(ref bool __result, Pawn pawn)
         {
-            if (_robotType.IsInstanceOfType(pawn))
+            if (_robotType != null && _robotType.IsInstanceOfType(pawn))
             {
                 __result = true;
                 return false;
